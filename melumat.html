@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML və CSS Məlumat Saytı</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #0f172a; 
+            color: #fff; 
+            font-family: Arial, sans-serif; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        input[type="radio"] { display: none; }
+        
+        .top-buttons { display: flex; gap: 12px; margin-bottom: 20px; }
+        .btn { 
+            padding: 10px 20px; 
+            background-color: rgba(30, 41, 59, 0.8); 
+            color: #94a3b8; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            font-size: 14px; 
+            font-weight: bold; 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            text-decoration: none; 
+        }
+        .btn:hover { color: #fff; background-color: #3b82f6; }
+        .bn-up:hover { color: #ef4444; background-color: #fff; }
+        .bn-up { background-color: #ef4444; color: #fff; position : absolute; top: 20px; left: 20px; padding: 10px 15px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+        
+        .slider-container { 
+            width: 800px; 
+            height: 450px; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
+            background-color: #1e293b; 
+        }
+        .slides { display: flex; width: 300%; height: 100%; transition: transform 0.6s ease-in-out; }
+        .slide { width: 33.333%; height: 100%; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        
+        .slide-1 { background: linear-gradient(135deg, #1e3a8a, #0f172a); }
+        .slide-2 { background: linear-gradient(135deg, #0f172a, #312e81); }
+        .slide-3 { background: linear-gradient(135deg, #065f46, #0f172a); }
+        
+        h2 { font-size: 28px; color: #60a5fa; margin-bottom: 15px; }
+        p { font-size: 16px; line-height: 1.6; color: #cbd5e1; margin-bottom: 12px; }
+        ul { margin-left: 20px; color: #94a3b8; line-height: 1.8; }
+        
+        #slide1:checked ~ .slider-container .slides { transform: translateX(0%); }
+        #slide2:checked ~ .slider-container .slides { transform: translateX(-33.333%); }
+        #slide3:checked ~ .slider-container .slides { transform: translateX(-66.666%); }
+        
+        #slide1:checked ~ .top-buttons label[for="slide1"],
+        #slide2:checked ~ .top-buttons label[for="slide2"],
+        #slide3:checked ~ .top-buttons label[for="slide3"] { 
+            background-color: #3b82f6; 
+            color: #fff; 
+        }
+    </style>
+</head>
+<body>
+
+    <input type="radio" name="app-flow" id="slide1" checked>
+    <input type="radio" name="app-flow" id="slide2">
+    <input type="radio" name="app-flow" id="slide3">
+
+    <div class="top-buttons">
+        <a href="Giris.html" class="btn bn-up">⬅ Girişə Qayıt</a>
+        <label for="slide1" class="btn">1. HTML Haqqında</label>
+        <label for="slide2" class="btn">2. CSS Haqqında</label>
+        <label for="slide3" class="btn">3. Projələr</label>
+    </div>
+
+    <div class="slider-container">
+        <div class="slides">
+            <div class="slide slide-1">
+                <h2>HTML nədir?</h2>
+                <p><strong>HTML</strong> veb-səhifələrin strukturunu müəyyənləşdirən etiket dilidir.</p>
+                <ul>
+                    <li>Mətnləri, şəkilləri və keçidləri təşkil edir.</li>
+                    <li>Semantik etiketlərlə işləyir.</li>
+                </ul>
+            </div>
+            <div class="slide slide-2">
+                <h2>CSS nədir?</h2>
+                <p><strong>CSS</strong> veb-səhifələrin vizual tərtibatını və rənglərini tənzimləyir.</p>
+                <ul>
+                    <li>Dizaynı məzmundan ayırır.</li>
+                    <li>Flexbox və Grid strukturları ilə səhifələri formalaşdırır.</li>
+                </ul>
+            </div>
+            <div class="slide slide-3">
+                <h2>Praktik Layihələr</h2>
+                <p>Yalnız HTML və CSS ilə interaktiv veb-saytlar yarada bilərsiniz.</p>
+                <ul>
+                    <li>Giriş formaları.</li>
+                    <li>Pure CSS Slayderlər.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

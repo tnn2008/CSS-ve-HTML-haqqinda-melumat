@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Səhifəsi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            width: 100%;
+            gap: 50px;
+        }
+
+        .info-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .badge-tag {
+            font-size: 12px;
+            font-weight: bold;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .info-section h1 {
+            font-size: 38px;
+            line-height: 1.25;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .feature-bullets {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #cbd5e1;
+            flex-wrap: wrap;
+        }
+
+        .feature-bullets span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-bullets span::before {
+            content: "•";
+            color: #3b82f6;
+            font-size: 22px;
+        }
+        .login-card {
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .login-card h2 {
+            margin-bottom: 20px;
+            color: #3b82f6;
+            font-size: 24px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: #fff;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .login-card input:focus {
+            border-color: #3b82f6;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #3b82f6;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #60a5fa;
+        }
+
+        .login-card h6 {
+            margin-top: 10px;
+            color: #64748b;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .info-section, .login-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            .info-section h1 {
+                font-size: 28px;
+            }
+            .sifre-link:hover {
+                color : #3b82f6;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+  
+        <div class="info-section">
+            <div>
+                <span class="badge-tag">VAHİD GİRİŞ XİDMƏTİ</span>
+                <h1>Tədris sistemlərinə bir keçiddən daxil olun.</h1>
+                <p>Hesabınızla HTML, CSS və Frontend dərslərinə, interaktiv slayd materiallarına təhlükəsiz giriş edin.</p>
+            </div>
+
+            <div class="feature-bullets">
+                <span>Təhlükəsiz giriş</span>
+                <span>Vahid hesab</span>
+                <span>İnteraktiv slaydlar</span>
+            </div>
+        </div>
+        <div class="login-card">
+            <h2>Sistemə Giriş</h2>
+
+            <form action="melumat.html" method="get">
+                <input type="text" name="username" placeholder="İstifadəçi adı" required pattern="[A-Za-zƏəĞğİiÖöŞşÜüÇçİı\s]+" oninvalid=" if (this.validity.valueMissing) { this.setCustomValidity('Zəhmət olmasa, bu xananı boş saxlamayın!'); } else if (this.validity.patternMismatch) { this.setCustomValidity('Adınızda rəqəm və ya xüsusi simvol istifadə edilə bilməz! Yalnız hərflərdən istifadə edin.'); } " oninput="this.setCustomValidity('')">
+                <input type="password" name="password" placeholder="Şifrə" required oninvalid="this.setCustomValidity('Şifrəniz ən azı 8 simvol uzunluğunda olmalı, ən azı bir böyük hərf, bir kiçik hərf, bir rəqəm və bir xüsusi simvol (@$!%*?&) içerməlidir.')" oninput="this.setCustomValidity('')" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}" title="Şifrəniz ən azı 8 simvol uzunluğunda olmalı, ən azı bir böyük hərf, bir kiçik hərf, bir rəqəm və bir xüsusi simvol (@$!%*?&) içerməlidir.">
+                
+                <button type="submit" class="btn-submit">Giriş Et və Keç</button> 
+                <br>
+                <h6><a href="#" class="sifre-link" style="color: #fff; text-decoration: underline;">Şifrənizi unutmusunuz?</a></h6>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
